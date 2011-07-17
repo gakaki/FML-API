@@ -1,0 +1,47 @@
+﻿@model mvc_api.Models.About
+@{
+    ViewBag.Title = "This is new About Index title";
+    ViewBag.my_var = "yes";
+
+    var data = "gakaki";
+
+    var m = new mvc_api.Models.About();
+    m.Title = "this is model title";
+    m.Name  = "this is model name";
+
+    // three method set layout _ViewStart and set layout variable
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>This is Abount Controller Index page  @ViewBag.my_var   @data</h2>
+
+
+<h2>@m.Name @m.Title</h2>
+
+<h2>@Model.Name @Model.Title</h2>
+
+@*
+
+    这段算是注释 是不会被解释的
+
+*@
+
+<p>
+tmp data is what
+    @{
+        var tmp = 200.23;
+     }
+     tmp data is : @tmp/10     <br/>
+     tmp data is : @(tmp/10)   <br/>
+     tmp data is : @(tmp/10.0) <br/>
+     tmp data is : k @tmp<br/>
+     tmp data is : k@tmp<br/>
+     tmp data is : k(@tmp)<br/>
+</p>
+
+
+
+
+@section Footer{
+    <p><strong>Oh this is section Footer</strong></p>
+}

@@ -1,0 +1,8 @@
+*.pdf
+*.rar
+*.zip
+packages/*.*
+App_Data
+aspnet_client
+bin/*.pdb
+obj/*.*

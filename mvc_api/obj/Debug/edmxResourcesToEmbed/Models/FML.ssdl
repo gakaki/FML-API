@@ -1,0 +1,1744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="familiarrealtyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="familiarrealtyModelStoreContainer">
+    <EntitySet Name="applyleague" EntityType="familiarrealtyModel.Store.applyleague" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="applyleague">
+      <DefiningQuery>SELECT 
+      [applyleague].[id] AS [id], 
+      [applyleague].[apply_type] AS [apply_type], 
+      [applyleague].[applicant_type] AS [applicant_type], 
+      [applyleague].[applicant_name] AS [applicant_name], 
+      [applyleague].[address] AS [address], 
+      [applyleague].[tel] AS [tel], 
+      [applyleague].[email] AS [email], 
+      [applyleague].[fax] AS [fax], 
+      [applyleague].[district] AS [district], 
+      [applyleague].[budget] AS [budget], 
+      [applyleague].[other] AS [other], 
+      [applyleague].[memo] AS [memo], 
+      [applyleague].[posttime] AS [posttime]
+      FROM [familiarrealty_f].[applyleague] AS [applyleague]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Building" EntityType="familiarrealtyModel.Store.Building" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="Building">
+      <DefiningQuery>SELECT 
+      [Building].[BuildingID] AS [BuildingID], 
+      [Building].[EstateID] AS [EstateID], 
+      [Building].[BuildingName] AS [BuildingName], 
+      [Building].[FloorAll] AS [FloorAll]
+      FROM [familiarrealty_f].[Building] AS [Building]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="category" EntityType="familiarrealtyModel.Store.category" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="category">
+      <DefiningQuery>SELECT 
+      [category].[id] AS [id], 
+      [category].[cat_name] AS [cat_name], 
+      [category].[parent_cat_id] AS [parent_cat_id]
+      FROM [familiarrealty_f].[category] AS [category]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="citylist" EntityType="familiarrealtyModel.Store.citylist" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="citylist">
+      <DefiningQuery>SELECT 
+      [citylist].[id] AS [id], 
+      [citylist].[cityname] AS [cityname]
+      FROM [familiarrealty_f].[citylist] AS [citylist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="companynews" EntityType="familiarrealtyModel.Store.companynews" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="companynews">
+      <DefiningQuery>SELECT 
+      [companynews].[id] AS [id], 
+      [companynews].[city] AS [city], 
+      [companynews].[title] AS [title], 
+      [companynews].[content] AS [content], 
+      [companynews].[posttime] AS [posttime]
+      FROM [familiarrealty_f].[companynews] AS [companynews]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="contactInfo" EntityType="familiarrealtyModel.Store.contactInfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="contactInfo">
+      <DefiningQuery>SELECT 
+      [contactInfo].[id] AS [id], 
+      [contactInfo].[contactInfo] AS [contactInfo], 
+      [contactInfo].[addTime] AS [addTime]
+      FROM [familiarrealty_f].[contactInfo] AS [contactInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="demand" EntityType="familiarrealtyModel.Store.demand" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="demand">
+      <DefiningQuery>SELECT 
+      [demand].[id] AS [id], 
+      [demand].[demand_type] AS [demand_type], 
+      [demand].[district] AS [district], 
+      [demand].[purpose] AS [purpose], 
+      [demand].[building_type] AS [building_type], 
+      [demand].[num_room] AS [num_room], 
+      [demand].[num_hall] AS [num_hall], 
+      [demand].[num_toilet] AS [num_toilet], 
+      [demand].[fitment] AS [fitment], 
+      [demand].[forward] AS [forward], 
+      [demand].[area_small] AS [area_small], 
+      [demand].[area_large] AS [area_large], 
+      [demand].[price_small] AS [price_small], 
+      [demand].[price_large] AS [price_large], 
+      [demand].[memo] AS [memo], 
+      [demand].[contact_man] AS [contact_man], 
+      [demand].[contact_phone] AS [contact_phone], 
+      [demand].[posttime] AS [posttime], 
+      [demand].[status] AS [status]
+      FROM [familiarrealty_f].[demand] AS [demand]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="demand2_temp" EntityType="familiarrealtyModel.Store.demand2_temp" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="demand2_temp">
+      <DefiningQuery>SELECT 
+      [demand2_temp].[id] AS [id], 
+      [demand2_temp].[contactman] AS [contactman], 
+      [demand2_temp].[tel] AS [tel], 
+      [demand2_temp].[email] AS [email], 
+      [demand2_temp].[address] AS [address], 
+      [demand2_temp].[subject] AS [subject], 
+      [demand2_temp].[content] AS [content], 
+      [demand2_temp].[posttime] AS [posttime], 
+      [demand2_temp].[status] AS [status]
+      FROM [familiarrealty_f].[demand2_temp] AS [demand2_temp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="dtproperties" EntityType="familiarrealtyModel.Store.dtproperties" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="dtproperties">
+      <DefiningQuery>SELECT 
+      [dtproperties].[id] AS [id], 
+      [dtproperties].[objectid] AS [objectid], 
+      [dtproperties].[property] AS [property], 
+      [dtproperties].[value] AS [value], 
+      [dtproperties].[uvalue] AS [uvalue], 
+      [dtproperties].[lvalue] AS [lvalue], 
+      [dtproperties].[version] AS [version]
+      FROM [familiarrealty_f].[dtproperties] AS [dtproperties]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="dytmp" EntityType="familiarrealtyModel.Store.dytmp" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="dytmp">
+      <DefiningQuery>SELECT 
+      [dytmp].[id] AS [id], 
+      [dytmp].[name] AS [name], 
+      [dytmp].[depth] AS [depth]
+      FROM [familiarrealty_f].[dytmp] AS [dytmp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="filelist" EntityType="familiarrealtyModel.Store.filelist" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="filelist">
+      <DefiningQuery>SELECT 
+      [filelist].[id] AS [id], 
+      [filelist].[downfilename] AS [downfilename], 
+      [filelist].[downfileurl] AS [downfileurl]
+      FROM [familiarrealty_f].[filelist] AS [filelist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="guestbook" EntityType="familiarrealtyModel.Store.guestbook" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="guestbook">
+      <DefiningQuery>SELECT 
+      [guestbook].[id] AS [id], 
+      [guestbook].[contactor] AS [contactor], 
+      [guestbook].[tel] AS [tel], 
+      [guestbook].[email] AS [email], 
+      [guestbook].[title] AS [title], 
+      [guestbook].[content] AS [content], 
+      [guestbook].[posttime] AS [posttime], 
+      [guestbook].[adminreply] AS [adminreply]
+      FROM [familiarrealty_f].[guestbook] AS [guestbook]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="houseinfo" EntityType="familiarrealtyModel.Store.houseinfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="houseinfo">
+      <DefiningQuery>SELECT 
+      [houseinfo].[id] AS [id], 
+      [houseinfo].[PropertyNo] AS [PropertyNo], 
+      [houseinfo].[userid] AS [userid], 
+      [houseinfo].[houseinfo_type] AS [houseinfo_type], 
+      [houseinfo].[district] AS [district], 
+      [houseinfo].[road] AS [road], 
+      [houseinfo].[buildingname] AS [buildingname], 
+      [houseinfo].[purpose] AS [purpose], 
+      [houseinfo].[num_room] AS [num_room], 
+      [houseinfo].[num_hall] AS [num_hall], 
+      [houseinfo].[num_toilet] AS [num_toilet], 
+      [houseinfo].[num_totalfloor] AS [num_totalfloor], 
+      [houseinfo].[num_floor] AS [num_floor], 
+      [houseinfo].[forward] AS [forward], 
+      [houseinfo].[fitment] AS [fitment], 
+      [houseinfo].[buildtime] AS [buildtime], 
+      [houseinfo].[area_all] AS [area_all], 
+      [houseinfo].[area_used] AS [area_used], 
+      [houseinfo].[price] AS [price], 
+      [houseinfo].[contact_man] AS [contact_man], 
+      [houseinfo].[contact_phone] AS [contact_phone], 
+      [houseinfo].[housepicurl] AS [housepicurl], 
+      [houseinfo].[memo] AS [memo], 
+      [houseinfo].[posttime] AS [posttime], 
+      [houseinfo].[checked] AS [checked], 
+      [houseinfo].[isrecommend] AS [isrecommend], 
+      [houseinfo].[estatename] AS [estatename], 
+      [houseinfo].[propertyfurniture] AS [propertyfurniture], 
+      [houseinfo].[propertyfloor] AS [propertyfloor], 
+      [houseinfo].[owername] AS [owername], 
+      [houseinfo].[owertel] AS [owertel], 
+      [houseinfo].[propertyelectric] AS [propertyelectric], 
+      [houseinfo].[operator_name] AS [operator_name], 
+      [houseinfo].[operator_phone] AS [operator_phone], 
+      [houseinfo].[isonly] AS [isonly], 
+      [houseinfo].[estateAddress] AS [estateAddress], 
+      [houseinfo].[deptAddress] AS [deptAddress], 
+      [houseinfo].[deptName] AS [deptName]
+      FROM [familiarrealty_f].[houseinfo] AS [houseinfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="housepicture" EntityType="familiarrealtyModel.Store.housepicture" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="housepicture">
+      <DefiningQuery>SELECT 
+      [housepicture].[id] AS [id], 
+      [housepicture].[houseid] AS [houseid], 
+      [housepicture].[picture] AS [picture]
+      FROM [familiarrealty_f].[housepicture] AS [housepicture]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="investment" EntityType="familiarrealtyModel.Store.investment" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="investment">
+      <DefiningQuery>SELECT 
+      [investment].[id] AS [id], 
+      [investment].[typeid] AS [typeid], 
+      [investment].[propertyNum] AS [propertyNum], 
+      [investment].[buildName] AS [buildName], 
+      [investment].[investmentType] AS [investmentType], 
+      [investment].[TradeWay] AS [TradeWay], 
+      [investment].[city] AS [city], 
+      [investment].[address] AS [address], 
+      [investment].[tel] AS [tel], 
+      [investment].[fax] AS [fax], 
+      [investment].[developer] AS [developer], 
+      [investment].[status] AS [status], 
+      [investment].[startsale] AS [startsale], 
+      [investment].[maxTotalPrice] AS [maxTotalPrice], 
+      [investment].[PropertyStatus] AS [PropertyStatus], 
+      [investment].[area] AS [area], 
+      [investment].[greenRatio] AS [greenRatio], 
+      [investment].[housestatus] AS [housestatus], 
+      [investment].[estateCompany] AS [estateCompany], 
+      [investment].[mainHight] AS [mainHight], 
+      [investment].[aluHight] AS [aluHight], 
+      [investment].[ungroundArea] AS [ungroundArea], 
+      [investment].[buildingdensity] AS [buildingdensity], 
+      [investment].[rentStatus] AS [rentStatus], 
+      [investment].[upgroundparkCounts] AS [upgroundparkCounts], 
+      [investment].[expireTime] AS [expireTime], 
+      [investment].[beginTime] AS [beginTime], 
+      [investment].[minTotalPrice] AS [minTotalPrice], 
+      [investment].[fitment] AS [fitment], 
+      [investment].[allArea] AS [allArea], 
+      [investment].[plotRatio] AS [plotRatio], 
+      [investment].[PayType] AS [PayType], 
+      [investment].[fee] AS [fee], 
+      [investment].[mainBuildfloors] AS [mainBuildfloors], 
+      [investment].[aluBuildfloors] AS [aluBuildfloors], 
+      [investment].[undergroundfloors] AS [undergroundfloors], 
+      [investment].[structureType] AS [structureType], 
+      [investment].[parkRent] AS [parkRent], 
+      [investment].[parkSale] AS [parkSale], 
+      [investment].[undergroundparkCounts] AS [undergroundparkCounts], 
+      [investment].[trafficStatus] AS [trafficStatus], 
+      [investment].[circumferenceSet] AS [circumferenceSet], 
+      [investment].[subdistrictSet] AS [subdistrictSet], 
+      [investment].[specialBrief] AS [specialBrief], 
+      [investment].[videoURL] AS [videoURL]
+      FROM [familiarrealty_f].[investment] AS [investment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="news" EntityType="familiarrealtyModel.Store.news" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="news">
+      <DefiningQuery>SELECT 
+      [news].[id] AS [id], 
+      [news].[typeid] AS [typeid], 
+      [news].[title] AS [title], 
+      [news].[content] AS [content], 
+      [news].[posttime] AS [posttime]
+      FROM [familiarrealty_f].[news] AS [news]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="news_rong" EntityType="familiarrealtyModel.Store.news_rong" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="news.rong">
+      <DefiningQuery>SELECT 
+      [news_rong].[id] AS [id], 
+      [news_rong].[typeid] AS [typeid], 
+      [news_rong].[title] AS [title], 
+      [news_rong].[content] AS [content], 
+      [news_rong].[posttime] AS [posttime]
+      FROM [familiarrealty_f].[news.rong] AS [news_rong]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="partner" EntityType="familiarrealtyModel.Store.partner" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="partner">
+      <DefiningQuery>SELECT 
+      [partner].[id] AS [id], 
+      [partner].[city] AS [city], 
+      [partner].[name] AS [name], 
+      [partner].[website] AS [website], 
+      [partner].[tel] AS [tel], 
+      [partner].[fax] AS [fax], 
+      [partner].[address] AS [address], 
+      [partner].[isrecommend] AS [isrecommend]
+      FROM [familiarrealty_f].[partner] AS [partner]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="star" EntityType="familiarrealtyModel.Store.star" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="star">
+      <DefiningQuery>SELECT 
+      [star].[id] AS [id], 
+      [star].[starname] AS [starname], 
+      [star].[starpic] AS [starpic], 
+      [star].[leagueid] AS [leagueid], 
+      [star].[leaguename] AS [leaguename], 
+      [star].[leaguecity] AS [leaguecity], 
+      [star].[ownerWords] AS [ownerWords]
+      FROM [familiarrealty_f].[star] AS [star]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="starShop" EntityType="familiarrealtyModel.Store.starShop" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="starShop">
+      <DefiningQuery>SELECT 
+      [starShop].[shopID] AS [shopID], 
+      [starShop].[shopName] AS [shopName], 
+      [starShop].[address] AS [address], 
+      [starShop].[shopPic] AS [shopPic], 
+      [starShop].[tel] AS [tel]
+      FROM [familiarrealty_f].[starShop] AS [starShop]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBAdmin" EntityType="familiarrealtyModel.Store.TBAdmin" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBAdmin">
+      <DefiningQuery>SELECT 
+      [TBAdmin].[rolesID] AS [rolesID], 
+      [TBAdmin].[AdminID] AS [AdminID], 
+      [TBAdmin].[AdminName] AS [AdminName], 
+      [TBAdmin].[AdminPwd] AS [AdminPwd]
+      FROM [familiarrealty_f].[TBAdmin] AS [TBAdmin]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBafterBuy" EntityType="familiarrealtyModel.Store.TBafterBuy" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBafterBuy">
+      <DefiningQuery>SELECT 
+      [TBafterBuy].[houseID] AS [houseID], 
+      [TBafterBuy].[nowProperty] AS [nowProperty], 
+      [TBafterBuy].[nowDebt] AS [nowDebt], 
+      [TBafterBuy].[realMoney] AS [realMoney], 
+      [TBafterBuy].[accountPay] AS [accountPay], 
+      [TBafterBuy].[rentalPay] AS [rentalPay], 
+      [TBafterBuy].[longDebt] AS [longDebt], 
+      [TBafterBuy].[rootProperty] AS [rootProperty], 
+      [TBafterBuy].[firstMortgage] AS [firstMortgage], 
+      [TBafterBuy].[buildingPrice] AS [buildingPrice], 
+      [TBafterBuy].[alreadyPayCorpus] AS [alreadyPayCorpus], 
+      [TBafterBuy].[accountAmount] AS [accountAmount], 
+      [TBafterBuy].[sumDebt] AS [sumDebt], 
+      [TBafterBuy].[purePeoperty] AS [purePeoperty], 
+      [TBafterBuy].[ownerRights] AS [ownerRights], 
+      [TBafterBuy].[debtAndPureMoeny] AS [debtAndPureMoeny], 
+      [TBafterBuy].[sumProperty] AS [sumProperty]
+      FROM [familiarrealty_f].[TBafterBuy] AS [TBafterBuy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBafterSaleRental" EntityType="familiarrealtyModel.Store.TBafterSaleRental" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBafterSaleRental">
+      <DefiningQuery>SELECT 
+      [TBafterSaleRental].[houseID] AS [houseID], 
+      [TBafterSaleRental].[planSumIncome] AS [planSumIncome], 
+      [TBafterSaleRental].[interIncome] AS [interIncome], 
+      [TBafterSaleRental].[monthPay] AS [monthPay], 
+      [TBafterSaleRental].[dailyPay] AS [dailyPay], 
+      [TBafterSaleRental].[IncomeMoney] AS [IncomeMoney]
+      FROM [familiarrealty_f].[TBafterSaleRental] AS [TBafterSaleRental]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBbudget" EntityType="familiarrealtyModel.Store.TBbudget" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBbudget">
+      <DefiningQuery>SELECT 
+      [TBbudget].[houseID] AS [houseID], 
+      [TBbudget].[propertyDebtRate] AS [propertyDebtRate], 
+      [TBbudget].[ownerLiveMonthMoney] AS [ownerLiveMonthMoney], 
+      [TBbudget].[rentalMonthMoney] AS [rentalMonthMoney], 
+      [TBbudget].[rentalYearIncomeRate] AS [rentalYearIncomeRate], 
+      [TBbudget].[rentalYearIncome] AS [rentalYearIncome], 
+      [TBbudget].[propertyIncomeRate] AS [propertyIncomeRate]
+      FROM [familiarrealty_f].[TBbudget] AS [TBbudget]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBcursor" EntityType="familiarrealtyModel.Store.TBcursor" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBcursor">
+      <DefiningQuery>SELECT 
+      [TBcursor].[CustomerID] AS [CustomerID], 
+      [TBcursor].[houseName] AS [houseName], 
+      [TBcursor].[UPrice] AS [UPrice], 
+      [TBcursor].[sqare] AS [sqare], 
+      [TBcursor].[managePay] AS [managePay], 
+      [TBcursor].[repairPrice] AS [repairPrice], 
+      [TBcursor].[mendPay] AS [mendPay], 
+      [TBcursor].[sNum] AS [sNum]
+      FROM [familiarrealty_f].[TBcursor] AS [TBcursor]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBhouseInfo" EntityType="familiarrealtyModel.Store.TBhouseInfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBhouseInfo">
+      <DefiningQuery>SELECT 
+      [TBhouseInfo].[houseID] AS [houseID], 
+      [TBhouseInfo].[houseName] AS [houseName], 
+      [TBhouseInfo].[UPrice] AS [UPrice], 
+      [TBhouseInfo].[sqare] AS [sqare], 
+      [TBhouseInfo].[managePrice] AS [managePrice], 
+      [TBhouseInfo].[firstPay] AS [firstPay], 
+      [TBhouseInfo].[loanDateIn] AS [loanDateIn], 
+      [TBhouseInfo].[yearRate] AS [yearRate], 
+      [TBhouseInfo].[rentalRef] AS [rentalRef], 
+      [TBhouseInfo].[floatPrice] AS [floatPrice], 
+      [TBhouseInfo].[dailyPay] AS [dailyPay], 
+      [TBhouseInfo].[mendPay] AS [mendPay], 
+      [TBhouseInfo].[dateIn] AS [dateIn], 
+      [TBhouseInfo].[PubDateTime] AS [PubDateTime], 
+      [TBhouseInfo].[customerID] AS [customerID]
+      FROM [familiarrealty_f].[TBhouseInfo] AS [TBhouseInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBInfo" EntityType="familiarrealtyModel.Store.TBInfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBInfo">
+      <DefiningQuery>SELECT 
+      [TBInfo].[ID] AS [ID], 
+      [TBInfo].[customerName] AS [customerName], 
+      [TBInfo].[CTel] AS [CTel], 
+      [TBInfo].[Address] AS [Address], 
+      [TBInfo].[Email] AS [Email], 
+      [TBInfo].[CodeAdd] AS [CodeAdd], 
+      [TBInfo].[Planner] AS [Planner], 
+      [TBInfo].[PTel] AS [PTel], 
+      [TBInfo].[InDate] AS [InDate], 
+      [TBInfo].[CodeID] AS [CodeID]
+      FROM [familiarrealty_f].[TBInfo] AS [TBInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBINTax" EntityType="familiarrealtyModel.Store.TBINTax" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBINTax">
+      <DefiningQuery>SELECT 
+      [TBINTax].[houseID] AS [houseID], 
+      [TBINTax].[deedTax] AS [deedTax], 
+      [TBINTax].[INtradePay] AS [INtradePay], 
+      [TBINTax].[INagreementPrintTax] AS [INagreementPrintTax], 
+      [TBINTax].[noteTax] AS [noteTax], 
+      [TBINTax].[testatePrintTax] AS [testatePrintTax], 
+      [TBINTax].[mortgageNoteTax] AS [mortgageNoteTax], 
+      [TBINTax].[paperTax] AS [paperTax], 
+      [TBINTax].[bussinessInPay] AS [bussinessInPay]
+      FROM [familiarrealty_f].[TBINTax] AS [TBINTax]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBloanInfo" EntityType="familiarrealtyModel.Store.TBloanInfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBloanInfo">
+      <DefiningQuery>SELECT 
+      [TBloanInfo].[houseID] AS [houseID], 
+      [TBloanInfo].[HDSumCorpusAndInter] AS [HDSumCorpusAndInter], 
+      [TBloanInfo].[loanSumMoney] AS [loanSumMoney], 
+      [TBloanInfo].[monthRebackMoney] AS [monthRebackMoney], 
+      [TBloanInfo].[monthRate] AS [monthRate], 
+      [TBloanInfo].[HSumInterest] AS [HSumInterest]
+      FROM [familiarrealty_f].[TBloanInfo] AS [TBloanInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBNafterSale" EntityType="familiarrealtyModel.Store.TBNafterSale" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBNafterSale">
+      <DefiningQuery>SELECT 
+      [TBNafterSale].[houseID] AS [houseID], 
+      [TBNafterSale].[saleInCome] AS [saleInCome], 
+      [TBNafterSale].[buyPrice] AS [buyPrice], 
+      [TBNafterSale].[salePlanIncome] AS [salePlanIncome], 
+      [TBNafterSale].[rentalIncome] AS [rentalIncome], 
+      [TBNafterSale].[sumManageIncome] AS [sumManageIncome], 
+      [TBNafterSale].[bechance] AS [bechance], 
+      [TBNafterSale].[MediationPay] AS [MediationPay], 
+      [TBNafterSale].[bussinessSumTax] AS [bussinessSumTax], 
+      [TBNafterSale].[NmontnManagePrice] AS [NmontnManagePrice], 
+      [TBNafterSale].[NmonthMendPay] AS [NmonthMendPay], 
+      [TBNafterSale].[bussinessSumPay] AS [bussinessSumPay], 
+      [TBNafterSale].[bussinessSumIncome] AS [bussinessSumIncome], 
+      [TBNafterSale].[alreadyPayInterest] AS [alreadyPayInterest], 
+      [TBNafterSale].[NloanPremium] AS [NloanPremium], 
+      [TBNafterSale].[ownerPay] AS [ownerPay], 
+      [TBNafterSale].[NsumIncome] AS [NsumIncome]
+      FROM [familiarrealty_f].[TBNafterSale] AS [TBNafterSale]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBOutTax" EntityType="familiarrealtyModel.Store.TBOutTax" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBOutTax">
+      <DefiningQuery>SELECT 
+      [TBOutTax].[houseID] AS [houseID], 
+      [TBOutTax].[OuttradePay] AS [OuttradePay], 
+      [TBOutTax].[delegateTax] AS [delegateTax], 
+      [TBOutTax].[OutagreementPrintTax] AS [OutagreementPrintTax], 
+      [TBOutTax].[bussinessTax] AS [bussinessTax], 
+      [TBOutTax].[cityBuildTax] AS [cityBuildTax], 
+      [TBOutTax].[educationTax] AS [educationTax], 
+      [TBOutTax].[riverwayTax] AS [riverwayTax], 
+      [TBOutTax].[bussinessOutPay] AS [bussinessOutPay]
+      FROM [familiarrealty_f].[TBOutTax] AS [TBOutTax]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBownerLive" EntityType="familiarrealtyModel.Store.TBownerLive" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBownerLive">
+      <DefiningQuery>SELECT 
+      [TBownerLive].[houseID] AS [houseID], 
+      [TBownerLive].[planSumIncome] AS [planSumIncome], 
+      [TBownerLive].[loanCorpusAndInter] AS [loanCorpusAndInter], 
+      [TBownerLive].[loanPremium] AS [loanPremium], 
+      [TBownerLive].[sumLoanOut] AS [sumLoanOut], 
+      [TBownerLive].[monthManagePrice] AS [monthManagePrice], 
+      [TBownerLive].[dailyPay] AS [dailyPay], 
+      [TBownerLive].[mendPay] AS [mendPay], 
+      [TBownerLive].[monthSumPay] AS [monthSumPay], 
+      [TBownerLive].[monthSumIncome] AS [monthSumIncome]
+      FROM [familiarrealty_f].[TBownerLive] AS [TBownerLive]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBpayment" EntityType="familiarrealtyModel.Store.TBpayment" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBpayment">
+      <DefiningQuery>SELECT 
+      [TBpayment].[houseID] AS [houseID], 
+      [TBpayment].[ID] AS [ID], 
+      [TBpayment].[corpusInster] AS [corpusInster], 
+      [TBpayment].[rebackPay] AS [rebackPay], 
+      [TBpayment].[monthRebackInter] AS [monthRebackInter], 
+      [TBpayment].[monthRebackCorpus] AS [monthRebackCorpus], 
+      [TBpayment].[oddCorpus] AS [oddCorpus]
+      FROM [familiarrealty_f].[TBpayment] AS [TBpayment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBrental" EntityType="familiarrealtyModel.Store.TBrental" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBrental">
+      <DefiningQuery>SELECT 
+      [TBrental].[houseID] AS [houseID], 
+      [TBrental].[rentalIncome] AS [rentalIncome], 
+      [TBrental].[sumIncome] AS [sumIncome], 
+      [TBrental].[emptyLost] AS [emptyLost], 
+      [TBrental].[rentalPlanIncome] AS [rentalPlanIncome], 
+      [TBrental].[managePay] AS [managePay], 
+      [TBrental].[monthManagePrice] AS [monthManagePrice], 
+      [TBrental].[mendPay] AS [mendPay], 
+      [TBrental].[manageSumPay] AS [manageSumPay], 
+      [TBrental].[manageIncome] AS [manageIncome], 
+      [TBrental].[businessTax] AS [businessTax], 
+      [TBrental].[afterTaxIncome] AS [afterTaxIncome], 
+      [TBrental].[creditOut] AS [creditOut], 
+      [TBrental].[loanCorpusAndInter] AS [loanCorpusAndInter], 
+      [TBrental].[loanPremium] AS [loanPremium], 
+      [TBrental].[sumLoanOut] AS [sumLoanOut], 
+      [TBrental].[monthSumIncome] AS [monthSumIncome]
+      FROM [familiarrealty_f].[TBrental] AS [TBrental]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBroles" EntityType="familiarrealtyModel.Store.TBroles" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBroles">
+      <DefiningQuery>SELECT 
+      [TBroles].[rolesID] AS [rolesID], 
+      [TBroles].[rolesName] AS [rolesName]
+      FROM [familiarrealty_f].[TBroles] AS [TBroles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSAfterBuy" EntityType="familiarrealtyModel.Store.TBSAfterBuy" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSAfterBuy">
+      <DefiningQuery>SELECT 
+      [TBSAfterBuy].[smallhouseID] AS [smallhouseID], 
+      [TBSAfterBuy].[nowProperty] AS [nowProperty], 
+      [TBSAfterBuy].[nowDebt] AS [nowDebt], 
+      [TBSAfterBuy].[realMoney] AS [realMoney], 
+      [TBSAfterBuy].[accountPay] AS [accountPay], 
+      [TBSAfterBuy].[rentalPay] AS [rentalPay], 
+      [TBSAfterBuy].[longDebt] AS [longDebt], 
+      [TBSAfterBuy].[rootProperty] AS [rootProperty], 
+      [TBSAfterBuy].[firstMortgage] AS [firstMortgage], 
+      [TBSAfterBuy].[buildingPrice] AS [buildingPrice], 
+      [TBSAfterBuy].[alreadyPayCorpus] AS [alreadyPayCorpus], 
+      [TBSAfterBuy].[accountAmount] AS [accountAmount], 
+      [TBSAfterBuy].[sumDebt] AS [sumDebt], 
+      [TBSAfterBuy].[purePeoperty] AS [purePeoperty], 
+      [TBSAfterBuy].[ownerRights] AS [ownerRights], 
+      [TBSAfterBuy].[debtAndPureMoeny] AS [debtAndPureMoeny], 
+      [TBSAfterBuy].[sumProperty] AS [sumProperty]
+      FROM [familiarrealty_f].[TBSAfterBuy] AS [TBSAfterBuy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSale" EntityType="familiarrealtyModel.Store.TBSale" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSale">
+      <DefiningQuery>SELECT 
+      [TBSale].[houseID] AS [houseID], 
+      [TBSale].[saleInCome] AS [saleInCome], 
+      [TBSale].[buyPrice] AS [buyPrice], 
+      [TBSale].[salePlanIncome] AS [salePlanIncome], 
+      [TBSale].[rentalIncome] AS [rentalIncome], 
+      [TBSale].[sumManageIncome] AS [sumManageIncome], 
+      [TBSale].[bechance] AS [bechance], 
+      [TBSale].[MediationPay] AS [MediationPay], 
+      [TBSale].[bussinessSumTax] AS [bussinessSumTax], 
+      [TBSale].[NmontnManagePrice] AS [NmontnManagePrice], 
+      [TBSale].[NmonthMendPay] AS [NmonthMendPay], 
+      [TBSale].[bussinessSumPay] AS [bussinessSumPay], 
+      [TBSale].[bussinessSumIncome] AS [bussinessSumIncome], 
+      [TBSale].[alreadyPayInterest] AS [alreadyPayInterest], 
+      [TBSale].[NloanPremium] AS [NloanPremium], 
+      [TBSale].[ownerPay] AS [ownerPay], 
+      [TBSale].[NsumIncome] AS [NsumIncome]
+      FROM [familiarrealty_f].[TBSale] AS [TBSale]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSaleafterBuy" EntityType="familiarrealtyModel.Store.TBSaleafterBuy" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSaleafterBuy">
+      <DefiningQuery>SELECT 
+      [TBSaleafterBuy].[houseID] AS [houseID], 
+      [TBSaleafterBuy].[nowProperty] AS [nowProperty], 
+      [TBSaleafterBuy].[nowDebt] AS [nowDebt], 
+      [TBSaleafterBuy].[realMoney] AS [realMoney], 
+      [TBSaleafterBuy].[accountPay] AS [accountPay], 
+      [TBSaleafterBuy].[rentalPay] AS [rentalPay], 
+      [TBSaleafterBuy].[longDebt] AS [longDebt], 
+      [TBSaleafterBuy].[rootProperty] AS [rootProperty], 
+      [TBSaleafterBuy].[firstMortgage] AS [firstMortgage], 
+      [TBSaleafterBuy].[buildingPrice] AS [buildingPrice], 
+      [TBSaleafterBuy].[alreadyPayCorpus] AS [alreadyPayCorpus], 
+      [TBSaleafterBuy].[accountAmount] AS [accountAmount], 
+      [TBSaleafterBuy].[sumDebt] AS [sumDebt], 
+      [TBSaleafterBuy].[purePeoperty] AS [purePeoperty], 
+      [TBSaleafterBuy].[ownerRights] AS [ownerRights], 
+      [TBSaleafterBuy].[debtAndPureMoney] AS [debtAndPureMoney], 
+      [TBSaleafterBuy].[sumProperty] AS [sumProperty]
+      FROM [familiarrealty_f].[TBSaleafterBuy] AS [TBSaleafterBuy]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSalebudget" EntityType="familiarrealtyModel.Store.TBSalebudget" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSalebudget">
+      <DefiningQuery>SELECT 
+      [TBSalebudget].[houseID] AS [houseID], 
+      [TBSalebudget].[propertyDebtRate] AS [propertyDebtRate], 
+      [TBSalebudget].[ownerLiveMonthMoney] AS [ownerLiveMonthMoney], 
+      [TBSalebudget].[rentalMonthMoney] AS [rentalMonthMoney], 
+      [TBSalebudget].[rentalYearIncomeRate] AS [rentalYearIncomeRate], 
+      [TBSalebudget].[rentalYearIncome] AS [rentalYearIncome], 
+      [TBSalebudget].[propertyIncomeRate] AS [propertyIncomeRate], 
+      [TBSalebudget].[compareRate] AS [compareRate]
+      FROM [familiarrealty_f].[TBSalebudget] AS [TBSalebudget]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSaleFixLoanInfo" EntityType="familiarrealtyModel.Store.TBSaleFixLoanInfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSaleFixLoanInfo">
+      <DefiningQuery>SELECT 
+      [TBSaleFixLoanInfo].[houseID] AS [houseID], 
+      [TBSaleFixLoanInfo].[rentYearInCome] AS [rentYearInCome], 
+      [TBSaleFixLoanInfo].[rentalDateIn] AS [rentalDateIn], 
+      [TBSaleFixLoanInfo].[sumMoney] AS [sumMoney], 
+      [TBSaleFixLoanInfo].[nowMoney] AS [nowMoney], 
+      [TBSaleFixLoanInfo].[pubDateTime] AS [pubDateTime]
+      FROM [familiarrealty_f].[TBSaleFixLoanInfo] AS [TBSaleFixLoanInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSaleHouseInfo" EntityType="familiarrealtyModel.Store.TBSaleHouseInfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSaleHouseInfo">
+      <DefiningQuery>SELECT 
+      [TBSaleHouseInfo].[houseID] AS [houseID], 
+      [TBSaleHouseInfo].[houseName] AS [houseName], 
+      [TBSaleHouseInfo].[UPrice] AS [UPrice], 
+      [TBSaleHouseInfo].[repairPrice] AS [repairPrice], 
+      [TBSaleHouseInfo].[sqare] AS [sqare], 
+      [TBSaleHouseInfo].[managePrice] AS [managePrice], 
+      [TBSaleHouseInfo].[firstPay] AS [firstPay], 
+      [TBSaleHouseInfo].[loanDateIn] AS [loanDateIn], 
+      [TBSaleHouseInfo].[yearRate] AS [yearRate], 
+      [TBSaleHouseInfo].[saleRef] AS [saleRef], 
+      [TBSaleHouseInfo].[rentalRef] AS [rentalRef], 
+      [TBSaleHouseInfo].[dailyPay] AS [dailyPay], 
+      [TBSaleHouseInfo].[mendPay] AS [mendPay], 
+      [TBSaleHouseInfo].[fixYearRate] AS [fixYearRate], 
+      [TBSaleHouseInfo].[dateIn] AS [dateIn], 
+      [TBSaleHouseInfo].[afterSaleRental] AS [afterSaleRental], 
+      [TBSaleHouseInfo].[customerID] AS [customerID], 
+      [TBSaleHouseInfo].[pubDateTime] AS [pubDateTime], 
+      [TBSaleHouseInfo].[isSmallhouse] AS [isSmallhouse]
+      FROM [familiarrealty_f].[TBSaleHouseInfo] AS [TBSaleHouseInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSaleINtax" EntityType="familiarrealtyModel.Store.TBSaleINtax" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSaleINtax">
+      <DefiningQuery>SELECT 
+      [TBSaleINtax].[houseID] AS [houseID], 
+      [TBSaleINtax].[deedTax] AS [deedTax], 
+      [TBSaleINtax].[INtradePay] AS [INtradePay], 
+      [TBSaleINtax].[INagreementPrintTax] AS [INagreementPrintTax], 
+      [TBSaleINtax].[noteTax] AS [noteTax], 
+      [TBSaleINtax].[testatePrintTax] AS [testatePrintTax], 
+      [TBSaleINtax].[mortgageNoteTax] AS [mortgageNoteTax], 
+      [TBSaleINtax].[paperTax] AS [paperTax], 
+      [TBSaleINtax].[bussinessInPay] AS [bussinessInPay]
+      FROM [familiarrealty_f].[TBSaleINtax] AS [TBSaleINtax]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSaleloanInfo" EntityType="familiarrealtyModel.Store.TBSaleloanInfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSaleloanInfo">
+      <DefiningQuery>SELECT 
+      [TBSaleloanInfo].[houseID] AS [houseID], 
+      [TBSaleloanInfo].[HDSumCorpusAndInter] AS [HDSumCorpusAndInter], 
+      [TBSaleloanInfo].[loanSumMoney] AS [loanSumMoney], 
+      [TBSaleloanInfo].[monthRebackMoney] AS [monthRebackMoney], 
+      [TBSaleloanInfo].[monthRate] AS [monthRate], 
+      [TBSaleloanInfo].[HSumInterest] AS [HSumInterest]
+      FROM [familiarrealty_f].[TBSaleloanInfo] AS [TBSaleloanInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSaleOutTax" EntityType="familiarrealtyModel.Store.TBSaleOutTax" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSaleOutTax">
+      <DefiningQuery>SELECT 
+      [TBSaleOutTax].[houseID] AS [houseID], 
+      [TBSaleOutTax].[OuttradePay] AS [OuttradePay], 
+      [TBSaleOutTax].[delegateTax] AS [delegateTax], 
+      [TBSaleOutTax].[OutagreementPrintTax] AS [OutagreementPrintTax], 
+      [TBSaleOutTax].[bussinessTax] AS [bussinessTax], 
+      [TBSaleOutTax].[cityBuildTax] AS [cityBuildTax], 
+      [TBSaleOutTax].[educationTax] AS [educationTax], 
+      [TBSaleOutTax].[riverwayTax] AS [riverwayTax], 
+      [TBSaleOutTax].[bussinessOutPay] AS [bussinessOutPay]
+      FROM [familiarrealty_f].[TBSaleOutTax] AS [TBSaleOutTax]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSaleownerLive" EntityType="familiarrealtyModel.Store.TBSaleownerLive" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSaleownerLive">
+      <DefiningQuery>SELECT 
+      [TBSaleownerLive].[houseID] AS [houseID], 
+      [TBSaleownerLive].[planSumIncome] AS [planSumIncome], 
+      [TBSaleownerLive].[loanCorpusAndInter] AS [loanCorpusAndInter], 
+      [TBSaleownerLive].[loanPremium] AS [loanPremium], 
+      [TBSaleownerLive].[sumLoanOut] AS [sumLoanOut], 
+      [TBSaleownerLive].[monthManagePrice] AS [monthManagePrice], 
+      [TBSaleownerLive].[dailyPay] AS [dailyPay], 
+      [TBSaleownerLive].[mendPay] AS [mendPay], 
+      [TBSaleownerLive].[houseLostPay] AS [houseLostPay], 
+      [TBSaleownerLive].[repairLostPay] AS [repairLostPay], 
+      [TBSaleownerLive].[monthSumPay] AS [monthSumPay], 
+      [TBSaleownerLive].[monthSumIncome] AS [monthSumIncome]
+      FROM [familiarrealty_f].[TBSaleownerLive] AS [TBSaleownerLive]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSalepayment" EntityType="familiarrealtyModel.Store.TBSalepayment" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSalepayment">
+      <DefiningQuery>SELECT 
+      [TBSalepayment].[houseID] AS [houseID], 
+      [TBSalepayment].[ID] AS [ID], 
+      [TBSalepayment].[corpusInster] AS [corpusInster], 
+      [TBSalepayment].[rebackPay] AS [rebackPay], 
+      [TBSalepayment].[monthRebackInter] AS [monthRebackInter], 
+      [TBSalepayment].[monthRebackCorpus] AS [monthRebackCorpus], 
+      [TBSalepayment].[oddCorpus] AS [oddCorpus]
+      FROM [familiarrealty_f].[TBSalepayment] AS [TBSalepayment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSalerental" EntityType="familiarrealtyModel.Store.TBSalerental" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSalerental">
+      <DefiningQuery>SELECT 
+      [TBSalerental].[houseID] AS [houseID], 
+      [TBSalerental].[rentalIncome] AS [rentalIncome], 
+      [TBSalerental].[sumIncome] AS [sumIncome], 
+      [TBSalerental].[emptyLost] AS [emptyLost], 
+      [TBSalerental].[rentalPlanIncome] AS [rentalPlanIncome], 
+      [TBSalerental].[managePay] AS [managePay], 
+      [TBSalerental].[monthManagePrice] AS [monthManagePrice], 
+      [TBSalerental].[mendPay] AS [mendPay], 
+      [TBSalerental].[houseLostPay] AS [houseLostPay], 
+      [TBSalerental].[repairLostPay] AS [repairLostPay], 
+      [TBSalerental].[manageSumPay] AS [manageSumPay], 
+      [TBSalerental].[manageIncome] AS [manageIncome], 
+      [TBSalerental].[businessTax] AS [businessTax], 
+      [TBSalerental].[afterTaxIncome] AS [afterTaxIncome], 
+      [TBSalerental].[creditOut] AS [creditOut], 
+      [TBSalerental].[loanCorpusAndInter] AS [loanCorpusAndInter], 
+      [TBSalerental].[loanPremium] AS [loanPremium], 
+      [TBSalerental].[sumLoanOut] AS [sumLoanOut], 
+      [TBSalerental].[monthSumIncome] AS [monthSumIncome]
+      FROM [familiarrealty_f].[TBSalerental] AS [TBSalerental]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSmallHouse" EntityType="familiarrealtyModel.Store.TBSmallHouse" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSmallHouse">
+      <DefiningQuery>SELECT 
+      [TBSmallHouse].[houseID] AS [houseID], 
+      [TBSmallHouse].[smallhouseID] AS [smallhouseID], 
+      [TBSmallHouse].[houseName] AS [houseName], 
+      [TBSmallHouse].[UPrice] AS [UPrice], 
+      [TBSmallHouse].[sqare] AS [sqare], 
+      [TBSmallHouse].[managePay] AS [managePay], 
+      [TBSmallHouse].[repairPrice] AS [repairPrice], 
+      [TBSmallHouse].[mendPay] AS [mendPay], 
+      [TBSmallHouse].[sNum] AS [sNum], 
+      [TBSmallHouse].[pubDateTime] AS [pubDateTime]
+      FROM [familiarrealty_f].[TBSmallHouse] AS [TBSmallHouse]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSmallInTax" EntityType="familiarrealtyModel.Store.TBSmallInTax" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSmallInTax">
+      <DefiningQuery>SELECT 
+      [TBSmallInTax].[smallhouseID] AS [smallhouseID], 
+      [TBSmallInTax].[deedTax] AS [deedTax], 
+      [TBSmallInTax].[INtradePay] AS [INtradePay], 
+      [TBSmallInTax].[INagreementPrintTax] AS [INagreementPrintTax], 
+      [TBSmallInTax].[noteTax] AS [noteTax], 
+      [TBSmallInTax].[testatePrintTax] AS [testatePrintTax], 
+      [TBSmallInTax].[mortgageNoteTax] AS [mortgageNoteTax], 
+      [TBSmallInTax].[paperTax] AS [paperTax], 
+      [TBSmallInTax].[bussinessInPay] AS [bussinessInPay]
+      FROM [familiarrealty_f].[TBSmallInTax] AS [TBSmallInTax]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBSMonthMoney" EntityType="familiarrealtyModel.Store.TBSMonthMoney" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="TBSMonthMoney">
+      <DefiningQuery>SELECT 
+      [TBSMonthMoney].[smallhouseID] AS [smallhouseID], 
+      [TBSMonthMoney].[planSumIncome] AS [planSumIncome], 
+      [TBSMonthMoney].[interIncome] AS [interIncome], 
+      [TBSMonthMoney].[SumMoney] AS [SumMoney], 
+      [TBSMonthMoney].[monthManagePay] AS [monthManagePay], 
+      [TBSMonthMoney].[dailyPay] AS [dailyPay], 
+      [TBSMonthMoney].[mendPay] AS [mendPay], 
+      [TBSMonthMoney].[houseLostPay] AS [houseLostPay], 
+      [TBSMonthMoney].[repairLostPay] AS [repairLostPay], 
+      [TBSMonthMoney].[sumPay] AS [sumPay], 
+      [TBSMonthMoney].[sumIncome] AS [sumIncome]
+      FROM [familiarrealty_f].[TBSMonthMoney] AS [TBSMonthMoney]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="userinfo" EntityType="familiarrealtyModel.Store.userinfo" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="userinfo">
+      <DefiningQuery>SELECT 
+      [userinfo].[id] AS [id], 
+      [userinfo].[groupid] AS [groupid], 
+      [userinfo].[username] AS [username], 
+      [userinfo].[password] AS [password], 
+      [userinfo].[email] AS [email], 
+      [userinfo].[tel] AS [tel], 
+      [userinfo].[Number] AS [Number], 
+      [userinfo].[Names] AS [Names], 
+      [userinfo].[Jobs] AS [Jobs]
+      FROM [familiarrealty_f].[userinfo] AS [userinfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserRecom" EntityType="familiarrealtyModel.Store.UserRecom" store:Type="Tables" store:Schema="familiarrealty_f" store:Name="UserRecom">
+      <DefiningQuery>SELECT 
+      [UserRecom].[Id] AS [Id], 
+      [UserRecom].[UserId] AS [UserId], 
+      [UserRecom].[UserName] AS [UserName], 
+      [UserRecom].[UserTjId] AS [UserTjId], 
+      [UserRecom].[Jobs] AS [Jobs], 
+      [UserRecom].[Content] AS [Content], 
+      [UserRecom].[AddTime] AS [AddTime], 
+      [UserRecom].[Checks] AS [Checks]
+      FROM [familiarrealty_f].[UserRecom] AS [UserRecom]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.applyleague”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="applyleague">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="apply_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicant_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="applicant_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="district" Type="nvarchar" MaxLength="50" />
+    <Property Name="budget" Type="nvarchar" MaxLength="50" />
+    <Property Name="other" Type="nvarchar" MaxLength="50" />
+    <Property Name="memo" Type="nvarchar" MaxLength="50" />
+    <Property Name="posttime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.Building”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="Building">
+    <Key>
+      <PropertyRef Name="BuildingID" />
+      <PropertyRef Name="BuildingName" />
+    </Key>
+    <Property Name="BuildingID" Type="int" Nullable="false" />
+    <Property Name="EstateID" Type="char" MaxLength="32" />
+    <Property Name="BuildingName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FloorAll" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.category”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cat_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="parent_cat_id" Type="smallint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.citylist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="citylist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cityname" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.companynews”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="companynews">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="city" Type="char" MaxLength="10" />
+    <Property Name="title" Type="char" MaxLength="10" />
+    <Property Name="content" Type="text" />
+    <Property Name="posttime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.contactInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="contactInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="contactInfo" Type="nvarchar" MaxLength="40" />
+    <Property Name="addTime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.demand”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="demand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="demand_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="district" Type="nvarchar" MaxLength="50" />
+    <Property Name="purpose" Type="nvarchar" MaxLength="50" />
+    <Property Name="building_type" Type="nvarchar" MaxLength="15" />
+    <Property Name="num_room" Type="nvarchar" MaxLength="1" />
+    <Property Name="num_hall" Type="nvarchar" MaxLength="1" />
+    <Property Name="num_toilet" Type="nvarchar" MaxLength="1" />
+    <Property Name="fitment" Type="nvarchar" MaxLength="50" />
+    <Property Name="forward" Type="nvarchar" MaxLength="50" />
+    <Property Name="area_small" Type="nvarchar" MaxLength="50" />
+    <Property Name="area_large" Type="nvarchar" MaxLength="50" />
+    <Property Name="price_small" Type="nvarchar" MaxLength="50" />
+    <Property Name="price_large" Type="nvarchar" MaxLength="50" />
+    <Property Name="memo" Type="nvarchar" MaxLength="255" />
+    <Property Name="contact_man" Type="nvarchar" MaxLength="50" />
+    <Property Name="contact_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="posttime" Type="datetime" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.demand2_temp”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="demand2_temp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="contactman" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="250" />
+    <Property Name="subject" Type="nvarchar" MaxLength="100" />
+    <Property Name="content" Type="varchar" MaxLength="1000" />
+    <Property Name="posttime" Type="datetime" />
+    <Property Name="status" Type="tinyint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.dtproperties”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+      <PropertyRef Name="version" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.dytmp”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="dytmp">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="depth" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="depth" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.filelist”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="filelist">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="downfilename" Type="nvarchar" MaxLength="50" />
+    <Property Name="downfileurl" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.guestbook”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="guestbook">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="contactor" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="250" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" />
+    <Property Name="content" Type="text" />
+    <Property Name="posttime" Type="datetime" />
+    <Property Name="adminreply" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.houseinfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="houseinfo">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="checked" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="PropertyNo" Type="nvarchar" MaxLength="250" />
+    <Property Name="userid" Type="int" />
+    <Property Name="houseinfo_type" Type="tinyint" />
+    <Property Name="district" Type="nvarchar" MaxLength="2500" />
+    <Property Name="road" Type="nvarchar" MaxLength="2500" />
+    <Property Name="buildingname" Type="nvarchar" MaxLength="2500" />
+    <Property Name="purpose" Type="nvarchar" MaxLength="2500" />
+    <Property Name="num_room" Type="nvarchar" MaxLength="20" />
+    <Property Name="num_hall" Type="nvarchar" MaxLength="20" />
+    <Property Name="num_toilet" Type="nvarchar" MaxLength="20" />
+    <Property Name="num_totalfloor" Type="smallint" />
+    <Property Name="num_floor" Type="smallint" />
+    <Property Name="forward" Type="nvarchar" MaxLength="2500" />
+    <Property Name="fitment" Type="nvarchar" MaxLength="2500" />
+    <Property Name="buildtime" Type="nvarchar" MaxLength="2500" />
+    <Property Name="area_all" Type="float" />
+    <Property Name="area_used" Type="float" />
+    <Property Name="price" Type="float" />
+    <Property Name="contact_man" Type="nvarchar" MaxLength="250" />
+    <Property Name="contact_phone" Type="varchar" MaxLength="250" />
+    <Property Name="housepicurl" Type="nvarchar" MaxLength="260" />
+    <Property Name="memo" Type="nvarchar" MaxLength="2500" />
+    <Property Name="posttime" Type="datetime" />
+    <Property Name="checked" Type="smallint" Nullable="false" />
+    <Property Name="isrecommend" Type="smallint" />
+    <Property Name="estatename" Type="nvarchar" MaxLength="2500" />
+    <Property Name="propertyfurniture" Type="nvarchar" MaxLength="2500" />
+    <Property Name="propertyfloor" Type="nvarchar" MaxLength="2500" />
+    <Property Name="owername" Type="nvarchar" MaxLength="2500" />
+    <Property Name="owertel" Type="nvarchar" MaxLength="2500" />
+    <Property Name="propertyelectric" Type="nvarchar" MaxLength="2500" />
+    <Property Name="operator_name" Type="nvarchar" MaxLength="2500" />
+    <Property Name="operator_phone" Type="nvarchar" MaxLength="2500" />
+    <Property Name="isonly" Type="int" />
+    <Property Name="estateAddress" Type="nvarchar" MaxLength="2500" />
+    <Property Name="deptAddress" Type="nvarchar" MaxLength="2500" />
+    <Property Name="deptName" Type="nvarchar" MaxLength="2500" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.housepicture”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="housepicture">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="houseid" Type="int" />
+    <Property Name="picture" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.investment”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="investment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="typeid" Type="int" />
+    <Property Name="propertyNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="buildName" Type="nvarchar" MaxLength="50" />
+    <Property Name="investmentType" Type="nvarchar" MaxLength="50" />
+    <Property Name="TradeWay" Type="nvarchar" MaxLength="50" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="developer" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="startsale" Type="nvarchar" MaxLength="50" />
+    <Property Name="maxTotalPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="PropertyStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="area" Type="nvarchar" MaxLength="50" />
+    <Property Name="greenRatio" Type="nvarchar" MaxLength="50" />
+    <Property Name="housestatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="estateCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="mainHight" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluHight" Type="nvarchar" MaxLength="50" />
+    <Property Name="ungroundArea" Type="nvarchar" MaxLength="50" />
+    <Property Name="buildingdensity" Type="nvarchar" MaxLength="50" />
+    <Property Name="rentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="upgroundparkCounts" Type="nvarchar" MaxLength="50" />
+    <Property Name="expireTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="beginTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="minTotalPrice" Type="nvarchar" MaxLength="50" />
+    <Property Name="fitment" Type="nvarchar" MaxLength="50" />
+    <Property Name="allArea" Type="nvarchar" MaxLength="50" />
+    <Property Name="plotRatio" Type="nvarchar" MaxLength="50" />
+    <Property Name="PayType" Type="nvarchar" MaxLength="50" />
+    <Property Name="fee" Type="nvarchar" MaxLength="50" />
+    <Property Name="mainBuildfloors" Type="nvarchar" MaxLength="50" />
+    <Property Name="aluBuildfloors" Type="nvarchar" MaxLength="50" />
+    <Property Name="undergroundfloors" Type="nvarchar" MaxLength="50" />
+    <Property Name="structureType" Type="nvarchar" MaxLength="50" />
+    <Property Name="parkRent" Type="nvarchar" MaxLength="50" />
+    <Property Name="parkSale" Type="nvarchar" MaxLength="50" />
+    <Property Name="undergroundparkCounts" Type="nvarchar" MaxLength="50" />
+    <Property Name="trafficStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="circumferenceSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="subdistrictSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="specialBrief" Type="ntext" />
+    <Property Name="videoURL" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.news”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="typeid" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="content" Type="text" />
+    <Property Name="posttime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.news.rong”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="news_rong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="typeid" Type="int" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="content" Type="text" />
+    <Property Name="posttime" Type="datetime" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.partner”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="partner">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="website" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" MaxLength="40" />
+    <Property Name="isrecommend" Type="smallint" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.star”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="star">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="starname" Type="nvarchar" MaxLength="50" />
+    <Property Name="starpic" Type="nvarchar" MaxLength="80" />
+    <Property Name="leagueid" Type="smallint" />
+    <Property Name="leaguename" Type="nvarchar" MaxLength="40" />
+    <Property Name="leaguecity" Type="nvarchar" MaxLength="5" />
+    <Property Name="ownerWords" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.starShop”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="starShop">
+    <Key>
+      <PropertyRef Name="shopID" />
+    </Key>
+    <Property Name="shopID" Type="int" Nullable="false" />
+    <Property Name="shopName" Type="nvarchar" MaxLength="40" />
+    <Property Name="address" Type="nvarchar" MaxLength="40" />
+    <Property Name="shopPic" Type="nvarchar" MaxLength="70" />
+    <Property Name="tel" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBAdmin”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBAdmin">
+    <Key>
+      <PropertyRef Name="rolesID" />
+      <PropertyRef Name="AdminID" />
+      <PropertyRef Name="AdminName" />
+      <PropertyRef Name="AdminPwd" />
+    </Key>
+    <Property Name="rolesID" Type="int" Nullable="false" />
+    <Property Name="AdminID" Type="int" Nullable="false" />
+    <Property Name="AdminName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AdminPwd" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBafterBuy”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBafterBuy">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="nowProperty" Type="decimal" Scale="5" />
+    <Property Name="nowDebt" Type="float" />
+    <Property Name="realMoney" Type="float" />
+    <Property Name="accountPay" Type="float" />
+    <Property Name="rentalPay" Type="float" />
+    <Property Name="longDebt" Type="float" />
+    <Property Name="rootProperty" Type="float" />
+    <Property Name="firstMortgage" Type="float" />
+    <Property Name="buildingPrice" Type="float" />
+    <Property Name="alreadyPayCorpus" Type="float" />
+    <Property Name="accountAmount" Type="float" />
+    <Property Name="sumDebt" Type="float" />
+    <Property Name="purePeoperty" Type="float" />
+    <Property Name="ownerRights" Type="float" />
+    <Property Name="debtAndPureMoeny" Type="float" />
+    <Property Name="sumProperty" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBafterSaleRental”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBafterSaleRental">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="planSumIncome" Type="float" />
+    <Property Name="interIncome" Type="float" />
+    <Property Name="monthPay" Type="float" />
+    <Property Name="dailyPay" Type="float" />
+    <Property Name="IncomeMoney" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBbudget”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBbudget">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="propertyDebtRate" Type="float" />
+    <Property Name="ownerLiveMonthMoney" Type="float" />
+    <Property Name="rentalMonthMoney" Type="float" />
+    <Property Name="rentalYearIncomeRate" Type="float" />
+    <Property Name="rentalYearIncome" Type="float" />
+    <Property Name="propertyIncomeRate" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBcursor”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBcursor">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="houseName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UPrice" Type="float" />
+    <Property Name="sqare" Type="float" />
+    <Property Name="managePay" Type="float" />
+    <Property Name="repairPrice" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="sNum" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBhouseInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBhouseInfo">
+    <Key>
+      <PropertyRef Name="houseID" />
+      <PropertyRef Name="houseName" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="houseName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UPrice" Type="float" />
+    <Property Name="sqare" Type="float" />
+    <Property Name="managePrice" Type="float" />
+    <Property Name="firstPay" Type="float" />
+    <Property Name="loanDateIn" Type="float" />
+    <Property Name="yearRate" Type="float" />
+    <Property Name="rentalRef" Type="float" />
+    <Property Name="floatPrice" Type="float" />
+    <Property Name="dailyPay" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="dateIn" Type="float" />
+    <Property Name="PubDateTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="customerID" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="customerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CTel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeAdd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Planner" Type="nvarchar" MaxLength="50" />
+    <Property Name="PTel" Type="nvarchar" MaxLength="50" />
+    <Property Name="InDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodeID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBINTax”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBINTax">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="deedTax" Type="float" />
+    <Property Name="INtradePay" Type="float" />
+    <Property Name="INagreementPrintTax" Type="float" />
+    <Property Name="noteTax" Type="float" />
+    <Property Name="testatePrintTax" Type="float" />
+    <Property Name="mortgageNoteTax" Type="float" />
+    <Property Name="paperTax" Type="float" />
+    <Property Name="bussinessInPay" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBloanInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBloanInfo">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="HDSumCorpusAndInter" Type="float" />
+    <Property Name="loanSumMoney" Type="float" />
+    <Property Name="monthRebackMoney" Type="float" />
+    <Property Name="monthRate" Type="float" />
+    <Property Name="HSumInterest" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBNafterSale”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBNafterSale">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="saleInCome" Type="float" />
+    <Property Name="buyPrice" Type="float" />
+    <Property Name="salePlanIncome" Type="float" />
+    <Property Name="rentalIncome" Type="float" />
+    <Property Name="sumManageIncome" Type="float" />
+    <Property Name="bechance" Type="float" />
+    <Property Name="MediationPay" Type="float" />
+    <Property Name="bussinessSumTax" Type="float" />
+    <Property Name="NmontnManagePrice" Type="float" />
+    <Property Name="NmonthMendPay" Type="float" />
+    <Property Name="bussinessSumPay" Type="float" />
+    <Property Name="bussinessSumIncome" Type="float" />
+    <Property Name="alreadyPayInterest" Type="float" />
+    <Property Name="NloanPremium" Type="float" />
+    <Property Name="ownerPay" Type="float" />
+    <Property Name="NsumIncome" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBOutTax”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBOutTax">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="OuttradePay" Type="float" />
+    <Property Name="delegateTax" Type="float" />
+    <Property Name="OutagreementPrintTax" Type="float" />
+    <Property Name="bussinessTax" Type="float" />
+    <Property Name="cityBuildTax" Type="float" />
+    <Property Name="educationTax" Type="float" />
+    <Property Name="riverwayTax" Type="float" />
+    <Property Name="bussinessOutPay" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBownerLive”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBownerLive">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="planSumIncome" Type="float" />
+    <Property Name="loanCorpusAndInter" Type="float" />
+    <Property Name="loanPremium" Type="float" />
+    <Property Name="sumLoanOut" Type="float" />
+    <Property Name="monthManagePrice" Type="float" />
+    <Property Name="dailyPay" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="monthSumPay" Type="float" />
+    <Property Name="monthSumIncome" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBpayment”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBpayment">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" />
+    <Property Name="corpusInster" Type="float" />
+    <Property Name="rebackPay" Type="float" />
+    <Property Name="monthRebackInter" Type="float" />
+    <Property Name="monthRebackCorpus" Type="float" />
+    <Property Name="oddCorpus" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBrental”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBrental">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="rentalIncome" Type="float" />
+    <Property Name="sumIncome" Type="float" />
+    <Property Name="emptyLost" Type="float" />
+    <Property Name="rentalPlanIncome" Type="float" />
+    <Property Name="managePay" Type="float" />
+    <Property Name="monthManagePrice" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="manageSumPay" Type="float" />
+    <Property Name="manageIncome" Type="float" />
+    <Property Name="businessTax" Type="float" />
+    <Property Name="afterTaxIncome" Type="float" />
+    <Property Name="creditOut" Type="float" />
+    <Property Name="loanCorpusAndInter" Type="float" />
+    <Property Name="loanPremium" Type="float" />
+    <Property Name="sumLoanOut" Type="float" />
+    <Property Name="monthSumIncome" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBroles”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBroles">
+    <Key>
+      <PropertyRef Name="rolesID" />
+      <PropertyRef Name="rolesName" />
+    </Key>
+    <Property Name="rolesID" Type="int" Nullable="false" />
+    <Property Name="rolesName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSAfterBuy”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSAfterBuy">
+    <Key>
+      <PropertyRef Name="smallhouseID" />
+    </Key>
+    <Property Name="smallhouseID" Type="int" Nullable="false" />
+    <Property Name="nowProperty" Type="float" />
+    <Property Name="nowDebt" Type="float" />
+    <Property Name="realMoney" Type="float" />
+    <Property Name="accountPay" Type="float" />
+    <Property Name="rentalPay" Type="float" />
+    <Property Name="longDebt" Type="float" />
+    <Property Name="rootProperty" Type="float" />
+    <Property Name="firstMortgage" Type="float" />
+    <Property Name="buildingPrice" Type="float" />
+    <Property Name="alreadyPayCorpus" Type="float" />
+    <Property Name="accountAmount" Type="float" />
+    <Property Name="sumDebt" Type="float" />
+    <Property Name="purePeoperty" Type="float" />
+    <Property Name="ownerRights" Type="float" />
+    <Property Name="debtAndPureMoeny" Type="float" />
+    <Property Name="sumProperty" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSale”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSale">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="saleInCome" Type="float" />
+    <Property Name="buyPrice" Type="float" />
+    <Property Name="salePlanIncome" Type="float" />
+    <Property Name="rentalIncome" Type="float" />
+    <Property Name="sumManageIncome" Type="float" />
+    <Property Name="bechance" Type="float" />
+    <Property Name="MediationPay" Type="float" />
+    <Property Name="bussinessSumTax" Type="float" />
+    <Property Name="NmontnManagePrice" Type="float" />
+    <Property Name="NmonthMendPay" Type="float" />
+    <Property Name="bussinessSumPay" Type="float" />
+    <Property Name="bussinessSumIncome" Type="float" />
+    <Property Name="alreadyPayInterest" Type="float" />
+    <Property Name="NloanPremium" Type="float" />
+    <Property Name="ownerPay" Type="float" />
+    <Property Name="NsumIncome" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSaleafterBuy”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSaleafterBuy">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="nowProperty" Type="float" />
+    <Property Name="nowDebt" Type="float" />
+    <Property Name="realMoney" Type="float" />
+    <Property Name="accountPay" Type="float" />
+    <Property Name="rentalPay" Type="float" />
+    <Property Name="longDebt" Type="float" />
+    <Property Name="rootProperty" Type="float" />
+    <Property Name="firstMortgage" Type="float" />
+    <Property Name="buildingPrice" Type="float" />
+    <Property Name="alreadyPayCorpus" Type="float" />
+    <Property Name="accountAmount" Type="float" />
+    <Property Name="sumDebt" Type="float" />
+    <Property Name="purePeoperty" Type="float" />
+    <Property Name="ownerRights" Type="float" />
+    <Property Name="debtAndPureMoney" Type="float" />
+    <Property Name="sumProperty" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSalebudget”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSalebudget">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="propertyDebtRate" Type="float" />
+    <Property Name="ownerLiveMonthMoney" Type="float" />
+    <Property Name="rentalMonthMoney" Type="float" />
+    <Property Name="rentalYearIncomeRate" Type="float" />
+    <Property Name="rentalYearIncome" Type="float" />
+    <Property Name="propertyIncomeRate" Type="float" />
+    <Property Name="compareRate" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSaleFixLoanInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSaleFixLoanInfo">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="rentYearInCome" Type="float" />
+    <Property Name="rentalDateIn" Type="float" />
+    <Property Name="sumMoney" Type="float" />
+    <Property Name="nowMoney" Type="float" />
+    <Property Name="pubDateTime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSaleHouseInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSaleHouseInfo">
+    <Key>
+      <PropertyRef Name="houseID" />
+      <PropertyRef Name="houseName" />
+      <PropertyRef Name="customerID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="houseName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UPrice" Type="float" />
+    <Property Name="repairPrice" Type="float" />
+    <Property Name="sqare" Type="float" />
+    <Property Name="managePrice" Type="float" />
+    <Property Name="firstPay" Type="float" />
+    <Property Name="loanDateIn" Type="float" />
+    <Property Name="yearRate" Type="float" />
+    <Property Name="saleRef" Type="float" />
+    <Property Name="rentalRef" Type="float" />
+    <Property Name="dailyPay" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="fixYearRate" Type="float" />
+    <Property Name="dateIn" Type="float" />
+    <Property Name="afterSaleRental" Type="float" />
+    <Property Name="customerID" Type="int" Nullable="false" />
+    <Property Name="pubDateTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="isSmallhouse" Type="int" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSaleINtax”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSaleINtax">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="deedTax" Type="float" />
+    <Property Name="INtradePay" Type="float" />
+    <Property Name="INagreementPrintTax" Type="float" />
+    <Property Name="noteTax" Type="float" />
+    <Property Name="testatePrintTax" Type="float" />
+    <Property Name="mortgageNoteTax" Type="float" />
+    <Property Name="paperTax" Type="float" />
+    <Property Name="bussinessInPay" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSaleloanInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSaleloanInfo">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="HDSumCorpusAndInter" Type="float" />
+    <Property Name="loanSumMoney" Type="float" />
+    <Property Name="monthRebackMoney" Type="float" />
+    <Property Name="monthRate" Type="float" />
+    <Property Name="HSumInterest" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSaleOutTax”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSaleOutTax">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="OuttradePay" Type="float" />
+    <Property Name="delegateTax" Type="float" />
+    <Property Name="OutagreementPrintTax" Type="float" />
+    <Property Name="bussinessTax" Type="float" />
+    <Property Name="cityBuildTax" Type="float" />
+    <Property Name="educationTax" Type="float" />
+    <Property Name="riverwayTax" Type="float" />
+    <Property Name="bussinessOutPay" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSaleownerLive”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSaleownerLive">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="planSumIncome" Type="float" />
+    <Property Name="loanCorpusAndInter" Type="float" />
+    <Property Name="loanPremium" Type="float" />
+    <Property Name="sumLoanOut" Type="float" />
+    <Property Name="monthManagePrice" Type="float" />
+    <Property Name="dailyPay" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="houseLostPay" Type="float" />
+    <Property Name="repairLostPay" Type="float" />
+    <Property Name="monthSumPay" Type="float" />
+    <Property Name="monthSumIncome" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSalepayment”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSalepayment">
+    <Key>
+      <PropertyRef Name="houseID" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="corpusInster" Type="float" />
+    <Property Name="rebackPay" Type="float" />
+    <Property Name="monthRebackInter" Type="float" />
+    <Property Name="monthRebackCorpus" Type="float" />
+    <Property Name="oddCorpus" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSalerental”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSalerental">
+    <Key>
+      <PropertyRef Name="houseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="rentalIncome" Type="float" />
+    <Property Name="sumIncome" Type="float" />
+    <Property Name="emptyLost" Type="float" />
+    <Property Name="rentalPlanIncome" Type="float" />
+    <Property Name="managePay" Type="float" />
+    <Property Name="monthManagePrice" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="houseLostPay" Type="float" />
+    <Property Name="repairLostPay" Type="float" />
+    <Property Name="manageSumPay" Type="float" />
+    <Property Name="manageIncome" Type="float" />
+    <Property Name="businessTax" Type="float" />
+    <Property Name="afterTaxIncome" Type="float" />
+    <Property Name="creditOut" Type="float" />
+    <Property Name="loanCorpusAndInter" Type="float" />
+    <Property Name="loanPremium" Type="float" />
+    <Property Name="sumLoanOut" Type="float" />
+    <Property Name="monthSumIncome" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSmallHouse”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSmallHouse">
+    <Key>
+      <PropertyRef Name="houseID" />
+      <PropertyRef Name="smallhouseID" />
+    </Key>
+    <Property Name="houseID" Type="int" Nullable="false" />
+    <Property Name="smallhouseID" Type="int" Nullable="false" />
+    <Property Name="houseName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UPrice" Type="float" />
+    <Property Name="sqare" Type="float" />
+    <Property Name="managePay" Type="float" />
+    <Property Name="repairPrice" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="sNum" Type="float" />
+    <Property Name="pubDateTime" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSmallInTax”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSmallInTax">
+    <Key>
+      <PropertyRef Name="smallhouseID" />
+    </Key>
+    <Property Name="smallhouseID" Type="int" Nullable="false" />
+    <Property Name="deedTax" Type="float" />
+    <Property Name="INtradePay" Type="float" />
+    <Property Name="INagreementPrintTax" Type="float" />
+    <Property Name="noteTax" Type="float" />
+    <Property Name="testatePrintTax" Type="float" />
+    <Property Name="mortgageNoteTax" Type="float" />
+    <Property Name="paperTax" Type="float" />
+    <Property Name="bussinessInPay" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.TBSMonthMoney”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="TBSMonthMoney">
+    <Key>
+      <PropertyRef Name="smallhouseID" />
+    </Key>
+    <Property Name="smallhouseID" Type="int" Nullable="false" />
+    <Property Name="planSumIncome" Type="float" />
+    <Property Name="interIncome" Type="float" />
+    <Property Name="SumMoney" Type="float" />
+    <Property Name="monthManagePay" Type="float" />
+    <Property Name="dailyPay" Type="float" />
+    <Property Name="mendPay" Type="float" />
+    <Property Name="houseLostPay" Type="float" />
+    <Property Name="repairLostPay" Type="float" />
+    <Property Name="sumPay" Type="float" />
+    <Property Name="sumIncome" Type="float" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.userinfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="userinfo">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="username" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="groupid" Type="smallint" />
+    <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Names" Type="nvarchar" MaxLength="50" />
+    <Property Name="Jobs" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6002: 表/视图“familiarrealty.familiarrealty_f.UserRecom”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+  <EntityType Name="UserRecom">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Jobs" />
+      <PropertyRef Name="AddTime" />
+      <PropertyRef Name="Checks" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserTjId" Type="int" />
+    <Property Name="Jobs" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="AddTime" Type="datetime" Nullable="false" />
+    <Property Name="Checks" Type="int" Nullable="false" />
+  </EntityType>
+  <!--生成过程中发现错误:
+      警告 6013: 表/视图“familiarrealty.familiarrealty_f.D99_REG”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="D99_REG">
+        <Property Name="ID" Type="int" />
+        <Property Name="Data" Type="varchar" MaxLength="255" />
+      </EntityType>
+      生成过程中发现错误:
+      警告 6013: 表/视图“familiarrealty.familiarrealty_f.D99_Tmp”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="D99_Tmp">
+        <Property Name="subdirectory" Type="varchar" MaxLength="100" />
+        <Property Name="depth" Type="varchar" MaxLength="100" />
+        <Property Name="file" Type="varchar" MaxLength="100" />
+      </EntityType>
+      生成过程中发现错误:
+      警告 6013: 表/视图“familiarrealty.familiarrealty_f.kill_kk”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="kill_kk">
+        <Property Name="subdirectory" Type="varchar" MaxLength="100" />
+        <Property Name="depth" Type="varchar" MaxLength="100" />
+        <Property Name="file" Type="varchar" MaxLength="100" />
+      </EntityType>
+      生成过程中发现错误:
+      警告 6013: 表/视图“familiarrealty.familiarrealty_f.t_jiaozhu”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+      
+      <EntityType Name="t_jiaozhu">
+        <Property Name="jiaozhu" Type="varchar" MaxLength="200" />
+      </EntityType>-->
+</Schema>

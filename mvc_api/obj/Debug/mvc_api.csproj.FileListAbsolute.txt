@@ -1,0 +1,16 @@
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\bin\mvc_api.dll
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\bin\mvc_api.pdb
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\bin\EntityFramework.dll
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\bin\EntityFramework.xml
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\obj\Debug\ResolveAssemblyReference.cache
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\obj\Debug\mvc_api.dll
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\obj\Debug\mvc_api.pdb
+E:\[ASP.NET MVC Sample]\mvc_api\mvc_api\bin\ServiceStack.Redis.xml
+C:\project_git\mvc_api\mvc_api\obj\Debug\ResolveAssemblyReference.cache
+C:\project_git\mvc_api\mvc_api\bin\mvc_api.dll
+C:\project_git\mvc_api\mvc_api\bin\mvc_api.pdb
+C:\project_git\mvc_api\mvc_api\bin\EntityFramework.dll
+C:\project_git\mvc_api\mvc_api\bin\EntityFramework.xml
+C:\project_git\mvc_api\mvc_api\obj\Debug\mvc_api.dll
+C:\project_git\mvc_api\mvc_api\obj\Debug\mvc_api.pdb
+C:\project_git\mvc_api\mvc_api\bin\fastJSON.pdb
