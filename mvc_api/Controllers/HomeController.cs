@@ -58,6 +58,7 @@ namespace mvc_api.Controllers
                                         RouteData.Values["action"],
                                         RouteData.Values["id"]);
 
+            ViewBag.gakaki = "gak1aki";
             return View();
         }
 
@@ -143,7 +144,7 @@ namespace mvc_api.Controllers
           return Content(string_obj, "application/json");
         //    return new JsonResult { Data = new  { house = string_obj }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
 
-           return new RenderJsonResult { Result = new { house = house_j } };
+           //return new RenderJsonResult { Result = new { house = house_j } };
         }
 
         public ActionResult test_json()

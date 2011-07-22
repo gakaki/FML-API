@@ -105,11 +105,6 @@
     <Compile Include="DataRowConverter.cs" />
     <Compile Include="JSONHelper.cs" />
     <Compile Include="Models\About.cs" />
-    <Compile Include="Models\FML.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FML.edmx</DependentUpon>
-    </Compile>
     <Compile Include="RenderBsonResult.cs" />
     <Compile Include="RenderJsonResult.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -204,12 +199,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Models\FML.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>FML.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\About\_ViewStart.cshtml" />

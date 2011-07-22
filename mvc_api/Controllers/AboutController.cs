@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using mvc_api.Models;
 
-
 using DBUtility;
 using System.Data.SqlClient;
 using System.Data;
@@ -13,12 +12,93 @@ using Microsoft.SqlServer.Types;
 
 using Helpers;
 using Newtonsoft.Json;
+using ServiceStack;
+using ServiceStack.Redis;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace mvc_api.Controllers
 {
     public class AboutController : Controller
     {
-        [HttpGet]
+        public ActionResult data_to_redis()
+        {
+            DataTable table = GetDataTable("select distinct road from   familiarrealty_f.houseinfo");
+
+            HashSet<string> non_rep_address = new HashSet<string>();
+            List<String> json_strings = new List<String>();
+
+            ServiceStack.Redis.RedisClient redis = new ServiceStack.Redis.RedisClient();
+            redis.FlushDb();
+
+            foreach (DataRow row in table.Rows) { 
+                var json_result = new { road = row["road"].ToString() };
+                redis.AddItemToList("road:geo", json_result.ToJSON());
+                json_strings.Add(json_result.ToJSON());
+                non_rep_address.Add(json_result.ToJSON());
+            }
+            
+            //Response.Write(String.Format(@"non_rep_address count is {0},json_string_count is {1}",non_rep_address.Count,json_strings.Count));
+            return new RenderJsonResult { 
+                  Result =  json_strings
+            };
+        }
+
+
+        public ActionResult near_houses()
+        {
+            string mongodb_connnection_string = "mongodb://127.0.0.1:27017";
+            MongoServer server = MongoServer.Create(mongodb_connnection_string);
+            MongoDatabase db = server.GetDatabase("fml");
+
+
+           //MongoCollection<BsonDocument> houses = db.GetCollection<BsonDocument>("houses").GeoNear(new QueryDocument("loc), 31, 121, 300);
+
+           
+            return new RenderJsonResult { Result = new {  } };
+        }
+
+
+        public ActionResult house_info_to_mongodb()
+        {
+            DataTable table = GetDataTable("select * from   familiarrealty_f.houseinfo");
+
+            string mongodb_connnection_string = "mongodb://127.0.0.1:27017";
+            MongoServer server = MongoServer.Create(mongodb_connnection_string);
+            MongoDatabase db = server.GetDatabase("fml");
+
+            MongoCollection<BsonDocument> houses = db.GetCollection<BsonDocument>("houses");
+          
+            using (server.RequestStart(db))
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                   BsonDocument house = new BsonDocument {
+                        {    "road"         ,  row["road"].ToString()   },
+                        {    "sql_id"       ,  row["id"].ToString()     }
+                   };
+                   houses.Insert(house);
+                }
+            }
+
+            return new RenderJsonResult { Result = new { table } };
+        }
+
+        private static DataTable GetDataTable(string sql)
+        {
+            DataTable table = new DataTable();
+            DBUtility.SqlDbHelper s = new SqlDbHelper();
+            using (var conn = s.GetConnection())
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                SqlCommand comm = new SqlCommand(sql, conn);
+                SqlDataReader sdr = comm.ExecuteReader();
+                table.Load(sdr);
+            }
+            return table;
+        }
+
+       
         public ActionResult get_sql_data2()
         {
             var point1  = SqlGeometry.Point(107.04352, 28.870554, 4326);
@@ -73,22 +153,8 @@ namespace mvc_api.Controllers
         [HttpGet]
         public ActionResult get_sql_data()
         {
-            
-
-            DataTable table = new DataTable();
-
-
-            DBUtility.SqlDbHelper s = new SqlDbHelper();
-            using (var conn = s.GetConnection())
-            {
-                if (conn.State == ConnectionState.Closed) conn.Open();
-                SqlCommand comm = new SqlCommand("select top 20 * from familiarrealty_f.houseinfo order by posttime desc", conn);
-                //comm.Parameters.Add(new SqlParameter("@begindate", beginDate));
-                //comm.Parameters.Add("@enddate", SqlDbType.DateTime, 8, "Adate").Value = endDate + " 23:59:59.999";
-                SqlDataReader sdr = comm.ExecuteReader();
-                table.Load(sdr);
-            }
-            
+            var table = GetDataTable("select top 20 * from familiarrealty_f.houseinfo order by posttime desc");
+     
             
             //var resultItems = (from DataRow dr in table.AsEnumerable()
             //                   select new 
@@ -128,12 +194,7 @@ namespace mvc_api.Controllers
 
         public ActionResult test_db()
         {
-            fml_entity db = new fml_entity();
-                var ins = new int[1,2,3,4];
-             //var houses = from house in db.houseinfoes
-             //             where house.id in ins
-             //             select house;
-            
+        
                                
             var data = new List<About>()
             {
